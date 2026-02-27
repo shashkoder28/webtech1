@@ -1,0 +1,185 @@
+/* ========== GLOBAL RESET ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========== BODY ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6dd5fa, #2980b9);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Animated background */
+@keyframes gradientFlow {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* ========== HEADER & FOOTER ========== */
+header, footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ========== MAIN CENTERING ========== */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== QUIZ CARD ========== */
+#quiz-container {
+    width: 95%;
+    max-width: 650px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    animation: slideUp 0.6s ease;
+    transition: transform 0.3s ease;
+}
+
+#quiz-container:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes slideUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ========== QUESTION ========== */
+#question {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* ========== OPTIONS ========== */
+#options button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+#options button:hover {
+    background: linear-gradient(45deg, #ff6a00, #ee0979);
+    transform: scale(1.03);
+}
+
+.selected {
+    background: linear-gradient(45deg, #00c9ff, #92fe9d) !important;
+    color: #000 !important;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255,255,255,0.6);
+}
+
+/* ========== SUBMIT BUTTON ========== */
+#submit-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* ========== FEEDBACK ========== */
+#feedback {
+    margin-top: 15px;
+    font-weight: 600;
+    min-height: 30px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.show-feedback {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== TIMER ========== */
+#timer {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+/* ========== PROGRESS BAR ========== */
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00f260, #0575e6);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+/* ========== RESULT SECTION ========== */
+#result-section {
+    text-align: center;
+    padding: 2rem;
+    animation: fadeResult 0.6s ease;
+}
+
+@keyframes fadeResult {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hidden {
+    display: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 1.5rem;
+    }
+
+    #question {
+        font-size: 1.1rem;
+    }
+}

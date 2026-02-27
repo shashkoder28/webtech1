@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College History & Courses Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <h1>College Knowledge Quiz</h1>
+</header>
+
+<main>
+    <section id="quiz-container" aria-live="polite">
+        <div id="progress-bar">
+            <div id="progress"></div>
+        </div>
+
+        <div id="timer">Time Left: <span id="time">15</span>s</div>
+
+        <h2 id="question">Question appears here</h2>
+
+        <div id="options" role="radiogroup"></div>
+
+        <button id="submit-btn">Submit Answer</button>
+
+        <div id="feedback" role="alert"></div>
+    </section>
+
+    <section id="result-section" class="hidden">
+        <h2>Your Final Score</h2>
+        <p id="score"></p>
+        <button onclick="restartQuiz()">Retake Quiz</button>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Your College Name</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
